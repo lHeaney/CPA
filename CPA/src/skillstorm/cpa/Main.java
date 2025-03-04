@@ -25,6 +25,7 @@ public class Main {
 		 * 		multiple licenses -> some users have only X amount of tax returns they can file, some are limited to X "business" returns, ect
 		 * 		Allow for category deletion (possibly part of move category? maybe have 2 categories, "uncategorized" and "trash", with the option to delete the trash?)
 		 * 		Include testing, handling, and exceptions for edge cases.
+		 * 		Ensure hashed login info always sent with requests to maintain stateless circumstances
 		 * 
 		 * Possibilities:
 		 * 		MySQL database reduced to 2NF or 3NF? for storage of records in most efficient way? Maybe even 4NF if I have time.
