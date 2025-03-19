@@ -1,4 +1,4 @@
-package skillstorm.cpa;
+package com.skillstorm.cpa;
 
 public class Main {
 
