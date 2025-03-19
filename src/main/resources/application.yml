@@ -1,0 +1,25 @@
+
+
+
+
+spring:
+  application:
+    name: CPA-API
+  datasource:
+    url: jdbc:mysql://localhost:5505/cpa_project
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+  security:
+    user:
+      name: root
+      password: root
+
+#server:
+#  port: 8808
+
+
+#base-url: localhost:8080/
