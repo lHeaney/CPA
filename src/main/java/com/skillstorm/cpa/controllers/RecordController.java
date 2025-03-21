@@ -32,25 +32,30 @@ public class RecordController {
 	
 	@GetMapping
 	public ResponseEntity<Iterable<Record>> findAll(@RequestParam(required = false) String type) {
+		logger.atInfo().log("Get request for records matching: "+type);
 		return service.findAll(type);
 	}
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Record> findById(@PathVariable int id) {
+		logger.atInfo().log("Get request for records id= "+id);
 		return service.findById(id);
 	}
 	@PostMapping
 	public ResponseEntity<Record> createOne(@RequestBody RecordDTO recordDTO) {
+		logger.atInfo().log("Post request to create a new record: "+recordDTO.toString());
 		return service.createOne(recordDTO);
 	}
 	
 	@PutMapping("/{id}")
 	public ResponseEntity<Record> updateOne(@PathVariable int id, @RequestBody RecordDTO recordDTO) {
+		logger.atInfo().log("Put request to update a record: "+recordDTO.toString());
 		return service.updateOne(id, recordDTO);
 	}
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> deleteById(@PathVariable int id) {
+		logger.atInfo().log("Delete request to delete a record id= "+id);
 		return service.deleteById(id);
 	}
 	
