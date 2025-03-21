@@ -46,14 +46,8 @@ public class RecordService {
 			return ResponseEntity.status(HttpStatus.OK).body(record.get());
 	}
 
-	public ResponseEntity<Record> createOne(RecordDTO recordDTO, String username, String password) { 
-		
-		try {
-			
-		}
-		catch(Exception e) {
-			
-		}
+	public ResponseEntity<Record> createOne(RecordDTO recordDTO) { 
+
 		try {
 			return ResponseEntity.status(HttpStatus.CREATED)
 								 .body(repo.save(new Record(0, recordDTO.owner(), recordDTO.type(), recordDTO.total_revenue(), recordDTO.taxes_owed(), recordDTO.taxes_paid(), recordDTO.status())));
@@ -64,7 +58,6 @@ public class RecordService {
 	}
 	
 	public ResponseEntity<Record> updateOne(int id, RecordDTO recordDTO) {
-		System.out.println("updateone"+id+" "+recordDTO);
 		if (repo.existsById(id))
 			return ResponseEntity.status(HttpStatus.OK)
 					.body(repo.save(new Record(id,  recordDTO.owner(), recordDTO.type(), recordDTO.total_revenue(), recordDTO.taxes_owed(), recordDTO.taxes_paid(), recordDTO.status())));
