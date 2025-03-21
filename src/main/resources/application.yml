@@ -18,11 +18,11 @@ spring:
       name: root
       password: root
 
-#server:
-#  port: 8808
+logging:
+  level:
+    ROOT: INFO
 
 
-#base-url: localhost:8080/
 management:
   endpoints:
     web:
