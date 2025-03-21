@@ -11,5 +11,5 @@ import com.skillstorm.cpa.models.User;
 public interface UserRepository extends CrudRepository<User, Integer> {
 	
 	@Query(value = "SELECT * FROM users WHERE user_type = ?1", nativeQuery = true)
-	public Iterable<User> findAllByType(String username);
+	public Iterable<User> findAllByname(String username);
 }

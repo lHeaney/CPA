@@ -40,8 +40,8 @@ public class RecordController {
 		return service.findById(id);
 	}
 	@PostMapping
-	public ResponseEntity<Record> createOne(@RequestBody RecordDTO recordDTO) {
-		return service.createOne(recordDTO);
+	public ResponseEntity<Record> createOne(@RequestBody RecordDTO recordDTO, @RequestParam(required=true) String username, @RequestParam(required=true) String password) {
+		return service.createOne(recordDTO, username, password);
 	}
 	
 	@PutMapping("/{id}")

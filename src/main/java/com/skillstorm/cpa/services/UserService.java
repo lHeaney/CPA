@@ -21,13 +21,14 @@ public class UserService {
 		this.repo = repo;
 	}
 	
-	public ResponseEntity<Iterable<User>> findAll(String type) {
+	public ResponseEntity<Iterable<User>> findAll(String username) {
 		
 		Iterable<User> users;
-		if (type == null) {
-			users = repo.findAll();
+		if (username == null) {
+//			users = repo.findAll();
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
 		} else {
-			users = repo.findAllByType(type);
+			users = repo.findAllByname(username);
 		}
 		
 		if (!users.iterator().hasNext())
@@ -36,6 +37,7 @@ public class UserService {
 			return ResponseEntity.status(HttpStatus.OK).body(users);
 		
 	}
+	
 	
 	public ResponseEntity<User> findById(int id) {
 		Optional<User> user = repo.findById(id);
